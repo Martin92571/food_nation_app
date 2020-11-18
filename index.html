@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="./js/countryApi.js"></script>
+    <script src="./js/googleMapsApi.js"></script>
+    <script src="./js/index.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="library/animate.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Food Nation</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="brand animated fadeInDown">
+            <span>f</span> ood
+            <span>n</span> ation
+        </h1>
+        <div class="search-container">
+            <div class="inputField autoCompleteBackground"></div>
+            <input class="inputField" autocomplete="off" type="text" name="search" placeholder="which country?" list='countries'>
+            <div class="search-icon">
+                <img src="images/search_icon.png" alt="">
+            </div>
+        </div>
+    </header>
+
+    <div id="map-container">
+        <div id="regions_div"></div>
+    </div>
+</body>
+
+</html>
+
+<!-- <div>Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->

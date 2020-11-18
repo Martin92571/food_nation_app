@@ -1,0 +1,148 @@
+html {
+  font-size: 2vh;
+}
+
+body {
+  margin: 0;
+}
+
+body,
+h1 {
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+h1.brand {
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-size: 3rem;
+  /* font-size: 6vh; */
+  /* font-size: 6vmin; */
+  overflow: visible;
+  margin: none;
+}
+
+h1.brand span {
+  color: #fd297b;
+  margin-right: -0.5rem;
+}
+
+header {
+  width: 100vw;
+  height: 23vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding: 1rem;
+}
+
+.search-container {
+  position: relative;
+  height: 3rem;
+  /* height: 6vmin; */
+  /* width: 60%; */
+  width: 40rem;
+  box-shadow: 0 1px 5px rgba(128, 128, 128, 0.3);
+  display: flex;
+}
+
+@media (max-width: 700px) {
+  .search-container{
+    width: 26rem;
+  }
+}
+
+.search-container .search-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem;
+  margin: 0 0.41rem;
+}
+.search-container .search-icon img {
+  width: 100%;
+}
+
+.search-container .inputField {
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  padding-left: 1%;
+  background: rgba(255, 255, 255, 0);
+  font-family: inherit;
+}
+
+.search-container input[name="search"] {
+  position: relative;
+  border: none;
+  outline: none;
+}
+
+.search-container .autoCompleteBackground {
+  box-sizing: border-box;
+  padding: 9px 1%;
+  position: absolute;
+  color: grey;
+  height: inherit;
+  width: 90%;
+}
+
+/* #map-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#map-container #regions_div {
+  height: 100%;
+} */
+
+#regions_div{
+  height:100%;
+}
+
+path {
+    stroke-width: 0;
+}
+
+path:hover {
+  fill: dodgerblue;
+  cursor: pointer;
+}
+
+.search-icon {
+  cursor: pointer;
+}
+
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+@media screen and (max-width: 375px) {
+  #regions_div {
+    display:none;
+  }
+  header {
+    padding: 0;
+  }
+  .search-container{
+    width: 80%;
+  }
+  .search-container .inputField {
+    font-size: 1rem;
+  }
+  .search-container .autoCompleteBackground {
+    display: none;
+  }
+  #map-container {
+    padding-top: 6rem;
+  }
+
+  #regions_div{
+    box-shadow: 0 1px 5px rgba(128, 128, 128, 0.3);
+  }
+}

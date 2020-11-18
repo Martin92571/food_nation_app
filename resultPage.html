@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="./library/rater/rater.min.js"></script>
+    <script src="./js/countryApi.js"></script>
+    <script src="./js/geolocation.js"> </script>
+    <script src="./js/yelpApi.js"></script>
+    <script src="./js/youtubeApi.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9ceHIlLUKyUjT0rnO_zEFMnYkbf220-o&callback=YelpMap"></script>
+    <script src="./js/resultsPage.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="./library/animate.css">
+    <link rel="stylesheet" href="./css/resultPage.css">
+    <title>Food Nation</title>
+</head>
+
+<body>
+    <div class="modal hide">
+        <div class="youtubeModal">
+        </div>
+    </div>
+
+    <header class="animated fadeIn">
+        <h1 class="brand" id="desktopBrand">
+            <span>f</span> ood
+            <span>n</span> ation
+        </h1>
+        <h1 class="brand" id="mobileBrand">
+            <span>f</span> <span>n</span>
+        </h1>
+        <div class="country">
+            <div class="flag">
+                <img src="">
+            </div>
+            <h2 class="name">
+                Mexico
+            </h2>
+        </div>
+    </header>
+
+    <section class="food-section">
+        <div class="foodImageContainer animated fadeInLeft">
+
+        </div>
+        <p class="wikiDescription  animated fadeInRight"></p>
+    </section>
+    <div class='blinkScrollBar'>&#8595 &#8595 &#8595</div>
+    <section class="how-to" id="videos">
+        <h1 class="makeItYourself">
+            <span>M</span>ake
+            <span>I</span>t
+            <span>Y</span>ourself
+        </h1>
+        <div class="youtubeVideos">
+
+        </div>
+    </section>
+
+    <section class="yelp">
+        <div class="rating"></div>
+        <h1 class="grabABite">
+            <span>G</span>rab
+            <span>a</span>
+            <span>b</span>ite
+            <span>N</span>earby
+        </h1>
+        <div class="search-container">
+            <div class="inputField autoCompleteBackground"></div>
+            <input class="inputField" autocomplete="off" type="text" name="search" placeholder="which city?">
+            <div class="search-icon">
+                <img src="images/search_icon.png" alt="">
+            </div>
+        </div>
+        <div class="loading"></div>
+        <div class="noResults">
+            <h1 class="noResultsFound">no results found</h1>
+        </div>
+        <div class="yelp-list">
+        </div>
+    </section>
+    <div class="mapContainer">
+        <div id="map">
+        </div>
+    </div>
+
+</body>
+
+</html>

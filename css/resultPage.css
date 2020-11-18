@@ -1,0 +1,393 @@
+/* Name: Electric Pink
+Hex: #FD297B
+
+Name: Fiery Rose
+Hex: #FF5864
+
+Name: Pastel Red
+Hex: #FF655B */
+body {
+  margin: 0;
+ overflow-x: hidden;
+
+}
+
+body,
+h1,
+h2 {
+  font-family: "Montserrat", sans-serif;
+}
+
+section h1 {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: lighter;
+}
+
+section h1 span {
+  color: #FF5864;
+}
+
+h1.brand {
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin: none;
+}
+
+h1.brand span {
+  color: #fd297b;
+  margin-right: -0.5rem;
+}
+
+#mobileBrand {
+  display:none;
+}
+
+header {
+  width: 100%;
+  height: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  padding: 1rem;
+
+  box-shadow: 0 0 1px rgba(128, 128, 128, 0.548);
+}
+
+header .country {
+  display: flex;
+}
+
+header .country h2.name {
+  font-weight: lighter;
+  text-transform: uppercase;
+  margin: auto 1rem;
+}
+
+section.food-section h1 {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: lighter;
+  text-align:center;
+  margin-left:0;
+}
+
+section.food-section h1 span {
+  color: #ff5864;
+}
+
+.foodImageContainer {
+  display: inline-block;
+}
+
+.foodImageContainer>img {
+  position: relative;
+  width: 38.2vw;
+  height: auto;
+  left: 23.6%;
+  max-height: 65vh;
+  object-fit: contain;
+}
+
+.wikiDescription {
+  width: 50%;
+  float: right;
+  box-sizing: border-box;
+  padding: 5vw;
+  vertical-align: center;
+}
+
+.blinkScrollBar {
+  height: 10vh;
+  width: 100vw;
+  position: absolute;
+  top: 88vh;
+  text-align: center;
+  font-size: 8vh;
+  background-color: #fd297b;
+  animation-name: blink;
+  animation-duration: 2900ms;
+  animation-iteration-count: infinite;
+  transition-timing-function: ease;
+}
+
+@keyframes blink {
+  0% {opacity: 0;}
+  50% {opacity: .2;}
+  100% {opacity: 0}
+}
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(80, 80, 80, 0.9);
+  z-index: 10;
+}
+.youtubeModal {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+section.how-to {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  clear: both;
+}
+
+section.how-to h1 {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: lighter;
+}
+
+section.how-to h1 span {
+  color: #ff5864;
+  clear: both;
+}
+
+section.how-to .youtubeVideos {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.videoDiv {
+  width: 30%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.videoDiv>img:hover{
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.4);
+  transition: 200ms;
+}
+
+.videoDiv img {
+  width: 100%;
+}
+
+.videoImageTitle {
+  color: black;
+  width: 100%;
+  font-weight: 2rem;
+  text-align:center;
+  overflow-wrap:break-word;
+}
+
+.hide {
+  display: none;
+}
+
+.brand:hover, .search-icon:hover {
+  cursor: pointer;
+}
+
+.rating {
+  color: #fd297b;
+}
+
+.yelp .yelp-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.yelp-review-card {
+  width: 30%; 
+  flex-wrap: wrap;
+  text-decoration: none;
+  color: black;
+  margin: 1rem 0;
+  box-shadow: 0 0 1px rgba(128, 128, 128, 0.548);
+  border-bottom: 1px solid #fd297b;
+  cursor: pointer;
+}
+
+.yelp-review-card .image {
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.yelp-review-card h1 {
+  font-weight: lighter;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.6rem;
+}
+
+.yelp-review-card .details {
+  padding: 1rem;
+}
+
+.mapContainer{
+    width: 100vw;
+    height: 30vw;
+}
+#map {
+  height: 100%;
+  width: 100%;
+}
+section.yelp {
+  width: 100vw;
+}
+
+section.yelp h1{
+  text-align: center;
+}
+
+section.yelp .search-container {
+  position: relative;
+  height: 3rem;
+  width: 60%;
+  margin: auto;
+  box-shadow: 0 1px 5px rgba(128, 128, 128, 0.3);
+  display: flex;
+  margin-bottom:2rem;
+}
+
+section.yelp .search-container .search-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  background-color: #FF655B;
+}
+
+section.yelp .search-container .search-icon img {
+  width: 100%;
+  filter: invert(100%);
+}
+
+section.yelp .search-container .inputField {
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  padding-left: 1%;
+  background: rgba(255, 255, 255, 0);
+  font-family: inherit;
+}
+
+section.yelp .search-container input[name="search"] {
+  position: relative;
+  border: none;
+  outline: none;
+}
+
+section.yelp .search-container .autoCompleteBackground {
+  box-sizing: border-box;
+  padding: 9px 1%;
+  position: absolute;
+  color: grey;
+  height: inherit;
+  width: 90%;
+}
+
+.loading {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #fd297b;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  animation: spin 2s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 700px) {
+  h1.brand{
+    font-size:2rem;
+  }
+  header .country h2.name{
+    display:none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header{
+    padding: 1rem 0;
+  }
+  h1.brand{
+    font-size: 2rem;
+  }
+
+  header .country h2.name{
+    display:none;
+  }
+
+  .mapContainer {
+    display:none;
+  }
+
+  .wikiDescription {
+    width: 100%;
+    float:none;
+    text-align:center;
+  }
+  .foodImageContainer{
+    display:static;
+  }
+
+  .foodImageContainer>img{
+    display:block;
+    margin: 0 auto;
+    left: 0;
+    width: 100vw;
+    max-width: 100vw;
+  }
+  
+  section.how-to h1{
+    text-align:center;
+  }
+
+  .videoDiv {
+    width: 100%;
+  }
+
+  .youtubeModal {
+    margin: 0 18px;
+    width:90%;
+    left:0;
+  }
+
+  .yelp-review-card {
+    width:100%!important;
+  }
+
+  #desktopBrand {
+    display:none;
+  }
+  #mobileBrand {
+    display:block;
+  }
+
+  .food-section h1 {
+    overflow-wrap: break-word;
+  }
+
+  .grabABite {
+    overflow-wrap: break-word;
+  }
+
+  .makeItYourself {
+    overflow-wrap: break-word;
+  }
+}

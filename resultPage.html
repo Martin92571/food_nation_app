@@ -7,11 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="./library/rater/rater.min.js"></script>
+    <script src="./js/apiKeys.js"></script>
     <script src="./js/countryApi.js"></script>
     <script src="./js/geolocation.js"> </script>
     <script src="./js/yelpApi.js"></script>
     <script src="./js/youtubeApi.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9ceHIlLUKyUjT0rnO_zEFMnYkbf220-o&callback=YelpMap"></script>
+    <script>
+        let dynamicMap = document.createElement("script");
+      
+        dynamicMap.setAttribute("async",'');
+        dynamicMap.setAttribute("defer",'');
+        dynamicMap.setAttribute("src",`https://maps.googleapis.com/maps/api/js?key=${mapKey}&callback=YelpMap`);
+
+        let head = document.head;
+        head.appendChild(dynamicMap);
+      </script>
+  
     <script src="./js/resultsPage.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
     <link rel="stylesheet" href="./library/animate.css">

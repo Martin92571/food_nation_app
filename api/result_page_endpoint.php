@@ -1,4 +1,5 @@
 <?php
+
 header('Content-Type: text/html; charset=utf-8');
 require '../server/backend/build_database/mysql_connect.php';
 
@@ -13,19 +14,18 @@ $query = "SELECT `name`, `food1`, `food2`, `food3`, `food4`, `food5` FROM `count
 $result = mysqli_query($conn,$query);
 
 $row = mysqli_fetch_row($result);
+
 $countryName = $row[0];
 
 //Pick a random foodId
-$foodId = '0';
-while($foodId === '0'){
-    $foodId = $row[rand(1,5)];
-}
-
+$foodId = $row[1];
 $query = "SELECT `name`, `image`, `description`, `video1`, `video2`, `video3` FROM `food` WHERE `id`=$foodId";
+mysqli_set_charset( $conn, "utf8" );
 $result = mysqli_query($conn,$query);
 
 //Return image and videos
 $resultAssocArr = mysqli_fetch_assoc($result);
+// print_r( $resultAssocArr['description']);
 $output['data'] = [
     'countryName' => $countryName,
     'name' => $resultAssocArr['name'],
@@ -38,5 +38,5 @@ $output['data'] = [
         ]
 ];
 $output['success'] = true;
-$outputJSON = json_encode($output);
+$outputJSON = json_encode($output,JSON_UNESCAPED_UNICODE);
 print_r($outputJSON);

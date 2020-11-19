@@ -23,28 +23,20 @@ function getFoodAndMedia(countryCode) {
             'countryCode': countryCode,
         },
         success: function (response) {
+            console.log("what is the response from endpoint",response)
             foodObj = JSON.parse(response);
             const { countryName, name, description, image, videoIds } = foodObj.data;
             food = name;
             renderDescriptionSection(name, description, image);
-            youtubeIDSearch(videoIds);
-        },
+            // const videosArr =  youtubeIDSearch(videoIds);
+        
+           
+            videoIds.forEach(renderVideo)         },
     };
     $.ajax(ajaxOptions)
 }
 
-function youtubeIDSearch(idArr) {
-    let idStr = idArr.join();
-    var ajaxOptions = {
-        url: `https://www.googleapis.com/youtube/v3/videos?id=${idStr}&key=AIzaSyAq7z-Gi9RbxC9wrUqxIpIkUFV6u76Qwhw&part=snippet`,
-        method: 'GET',
-        success: function (response) {
-            const videosArr = response.items;
-            videosArr.forEach(renderVideo)
-        },
-    };
-    $.ajax(ajaxOptions)
-}
+
 
 function renderDescriptionSection(foodName, description, image) {
     let headerHtml = makeheader(foodName);
@@ -59,44 +51,27 @@ function renderDescriptionSection(foodName, description, image) {
 }
 
 function renderVideo(video) {
+    console.log("inside renderVideo",video)
     const videoBody = $("<div>", {
-        class: `videoDiv video-${video.id}`,
+        class: `videoDiv video-${video}`,
         on: {
             click: () => {
-                openYoutubeModal(video.id);
+                openYoutubeModal(video);
             }
         }
     });
-    const title = $("<p>", {
-        class: "videoImageTitle",
-        text: video.snippet.title
+    let youtubeVideo = $("<iframe>", {
+        width: "100%",
+        height: "100%",
+        src: `https://www.youtube.com/embed/${video}`,
+        frameborder: "1"
     });
-    const videoImage = $("<img>", {
-        src: `${video.snippet.thumbnails.medium.url}`
-    });
-    videoBody.append(videoImage, title);
+    videoBody.append(youtubeVideo);
 
     $(".youtubeVideos").append(videoBody);
 }
 
-function openYoutubeModal(videoClicked) {
-    let youtubeVideo = $("<iframe>", {
-        width: "100%",
-        height: "100%",
-        src: `https://www.youtube.com/embed/${videoClicked}`,
-        frameborder: "1"
-    });
-    $(".youtubeModal").append(youtubeVideo);
 
-    $(".modal").addClass("animated fadeIn");
-    $(".modal .youtubeModal").addClass("animated zoomIn");
-    $(".modal").removeClass("hide");
-}
-
-function closeYoutubeModal() {
-    $(".youtubeModal").html("");
-    $(".modal").addClass("hide");
-}
 
 function renderYelpResults(businesses) {
     businesses.businesses.forEach(business => {
@@ -212,15 +187,19 @@ function sendLocationToYelp() {
     $(".search-icon").off();
     $("input.inputField").off();
     $('.yelp-list').empty();
-    Geolocation.cityLocation(location).done(({ results: [first] }) => {
-        if (typeof (first) === "undefined") {
+    Geolocation.cityLocation(location).done(( data ) => {
+        let results=data.results[0]
+        
+
+        if (typeof (results) === "undefined") {
             $(".search-icon").on("click", sendLocationToYelp);
             $("input.inputField").on("keydown", handleInputBarEnterKey);
             displayNoResults();
             return;
         }
-        const { location } = first.geometry;
+        const { location } = results.geometry;
         Yelp.getLocalBusinesses(location, food).done((businesses) => {
+           
             businesses = JSON.parse(businesses);
             if (businesses.businesses.length === 0) {
                 $(".search-icon").on("click", sendLocationToYelp);

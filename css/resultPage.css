@@ -127,14 +127,6 @@ section.food-section h1 span {
   background-color: rgba(80, 80, 80, 0.9);
   z-index: 10;
 }
-.youtubeModal {
-  width: 50%;
-  height: 50%;
-  position: absolute;
-  top: 20%;
-  left: 25%;
-  background-color: rgba(0, 0, 0, 0.9);
-}
 
 section.how-to {
   display: flex;
@@ -160,6 +152,7 @@ section.how-to .youtubeVideos {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  height: 315px;
 }
 
 .videoDiv {

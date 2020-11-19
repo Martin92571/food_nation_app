@@ -50,7 +50,7 @@ function countrySeparateArray() {
 
 google.charts.load('current', {
   'packages': ['geochart'],
-  'mapsApiKey': 'AIzaSyBcB4StL9IQqNuDsMzO7j_uvPvQXnVhn8U'
+  'mapsApiKey': mapKey
 });
 
 google.charts.setOnLoadCallback(drawRegionsMap);

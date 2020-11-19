@@ -1,31 +1,21 @@
-class YoutubeApi {
-  static youtubeServerCall(food) {
-    const data = {
-      url: "https://s-apis.learningfuze.com/hackathon/youtube/search.php",
-      method: "POST",
-      dataType: "json",
-      data: {
-        q: `${food} recipe`,
-        maxResults: 3,
-        detailLevel: "verbose"
-      },
-      success: foodVideos
-    };
-    $.ajax(data);
-  }
-}
 
-function youtubeIDSearch(idArr) {
+
+
+async function youtubeIDSearch(idArr) {
+ 
   let idStr = idArr.join();
   var ajaxOptions = {
-    url: `https://www.googleapis.com/youtube/v3/videos?id=${idStr}&key=AIzaSyAq7z-Gi9RbxC9wrUqxIpIkUFV6u76Qwhw&part=snippet`,
+    url: `https://www.googleapis.com/youtube/v3/videos?id=${idStr}&key=${youtubeKey}&part=snippet`,
     method: 'GET',
-    success: function (response) {
-      console.log(response);
-    },
+  
   };
-  $.ajax(ajaxOptions)
+  
+  let result=await $.ajax(ajaxOptions)
+  console.log("what is th await results",result)
 }
+
+
+
 
 function foodVideos(videos) {
   for (let video in videos.data) {
@@ -70,3 +60,5 @@ function closeYoutubeModal() {
   $(".youtubeModal").html("");
   $(".modal").addClass("hide");
 }
+
+
